@@ -10,11 +10,12 @@ import React from 'react'
 import * as glamor from 'glamor'
 
 const itemStyle = glamor.css({
-  width: '20%',
-  backgroundColor: 'red',
+  width: 150,
   display: 'inline-flex',
   margin: '1rem',
   justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'column',
 })
 
 const itemName = glamor.css({
@@ -22,15 +23,20 @@ const itemName = glamor.css({
   textAlign: 'center',
 })
 
+const itemImage = glamor.css({
+	width: 150,
+	height: 150,
+})
+
 const ItemsView = ({items}) => {
 	return items.map( item => {
 		return(
-			<div className={`${itemStyle}`} key={item.itemCode}>
-				<img src={item.img} alt={item.name}/>
+			<a className={`${itemStyle}`} href={`/${item.itemCode}`} key={item.itemCode}>
+				<img className={`${itemImage}`} src={item.img} alt={item.name}/>
 				<div>{item.name}</div>
-				<div>{item.rating}</div>
+				<div>{'*'.repeat(item.rating)}</div>
 				<div>{item.price}</div>
-			</div>
+			</a>
 		)
 	})
 }

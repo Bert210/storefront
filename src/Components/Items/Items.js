@@ -13,9 +13,9 @@ import ItemsView from './ItemsView'
 // This is just a placeholder until i implement a backend to fetch the data from the server.
 // api location idea items
 const items = [
-	{img: "./imgs/necklace.jpg", name:"Gold Necklace", itemCode:"001", price:19.99, rating:"*****"},
-	{img: "./imgs/earrings.jpg", name:"Sliver Earrings", itemCode:"002", price:14.99, rating:"****"},
-	{img: "./imgs/barcelet.jpg", name:"Copper Bracelet", itemCode:"003", price:9.99, rating:"***"}
+	{img: "./imgs/necklace.jpg", name:"Gold Necklace", 	itemCode:"001",	 price:19.99, rating:5 },
+	{img: "./imgs/earrings.jpg", name:"Sliver Earrings", itemCode:"002", price:14.99, rating:4 },
+	{img: "./imgs/barcelet.jpg", name:"Copper Bracelet", itemCode:"003", price:9.99,  rating:3 }
 ]
 
 class Items extends React.Component {

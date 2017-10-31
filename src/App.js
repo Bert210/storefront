@@ -30,7 +30,9 @@ const Title = glamorous.span({
 
 const MainPromo = glamorous.div({
   height: 500,
-
+  backgroundImage: 'url(./imgs/barcelet.jpg)',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
 })
 
 const Links = glamorous.span({
@@ -43,11 +45,8 @@ const Links = glamorous.span({
 })
 
 const Link = glamorous.span({
-  // height: '100%',
-  // flexDirection: 'row',
   margin: '0 0.5rem',
   textTransform: 'uppercase',
-  // alignItems: 'center',
 })
 
 const SideBar = glamorous.span({
@@ -72,7 +71,8 @@ class App extends Component {
             <Link>Cart</Link>
           </Links>
         </TitleContainer>
-        <MainPromo />
+        <MainPromo>
+        </MainPromo>
         <SideBar>
           Filter by:
         </SideBar>
