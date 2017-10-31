@@ -20,7 +20,18 @@ const items = [
 
 class Items extends React.Component {
 	render() {
-		return <ItemsView items={items}/>
+		return (
+		<div>
+			<div>
+				<h3>Lastest Products</h3>
+				<ItemsView items={items}/>
+			</div>
+			<div>
+				<h3>Popular Products</h3>
+				<ItemsView items={items}/>
+			</div>
+		</div>
+		)
 	}
 }
 

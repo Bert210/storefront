@@ -5,17 +5,6 @@ import glamorous from 'glamorous'
 
 import Items from "./Components/Items/Items"
 
-const Info = glamorous.div({
-  display: 'flex',
-  height: 20,
-  padding: 5,
-  backgroundColor: 'black',
-  color: 'white',
-  fontSize: 12,
-  justifyContent: 'center',
-  alignItems: 'center',
-})
-
 const TitleContainer = glamorous.div({
   padding: '0 4rem',
   display: 'flex',
@@ -23,9 +12,37 @@ const TitleContainer = glamorous.div({
 })
 
 const Title = glamorous.span({
-  fontSize: 36,
+  fontSize: 24,
   padding: '0.5rem 0',
-  flex: 1,
+  // flex: 1,
+  color: '#3b3838',
+})
+
+const Divider = glamor.css({
+  // height: 80,
+  width: 1,
+  backgroundColor: '#989898',
+  margin: '12px 2rem',
+})
+
+const Links = glamorous.span({
+  // justifyContent: 'flex-end',
+  // display: 'flex',
+  // flex: 4,
+  // justifyContent: 'flex-end',
+  alignSelf: 'center',
+
+  // padding: '0.5rem 0',
+})
+
+const Link = glamorous.a({
+  margin: '0 0.5rem',
+  color: '#989898',
+  textDecoration: 'none',
+  ':hover': {
+    color: '#3b3838',
+  }
+  // textTransform: 'uppercase',
 })
 
 const MainPromo = glamorous.div({
@@ -33,20 +50,6 @@ const MainPromo = glamorous.div({
   backgroundImage: 'url(./imgs/barcelet.jpg)',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
-})
-
-const Links = glamorous.span({
-  // justifyContent: 'flex-end',
-  display: 'flex',
-  flex: 4,
-  justifyContent: 'flex-end',
-  alignSelf: 'center',
-  // padding: '0.5rem 0',
-})
-
-const Link = glamorous.span({
-  margin: '0 0.5rem',
-  textTransform: 'uppercase',
 })
 
 const SideBar = glamorous.span({
@@ -58,24 +61,23 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Info>
-          Free Shipping on orders over $150
-        </Info>
         <TitleContainer>
-          <Title>Store</Title>
+          <Title>The Store</Title>
+          <div className={`${Divider}`} ></div>
           <Links>
-            <Link>Brands</Link>
-            <Link>Departments</Link>
-            <Link>Journal</Link>
-            <Link>Contact</Link>
-            <Link>Cart</Link>
+            <Link href="/men">Men</Link>
+            <Link href="/women">Women</Link>
+            <Link href="/about">About</Link>
+            <Link href="/blog">Blog</Link>
+            <Link href="/support">Support</Link>
           </Links>
+          <div><i class="fa fa-shopping-cart" aria-hidden='true'></i></div>
         </TitleContainer>
         <MainPromo>
+          <div>New Season Arrivals</div>
+          <div>Check out all the new trends</div>
+          <div><a href="">Shop Now</a></div>
         </MainPromo>
-        <SideBar>
-          Filter by:
-        </SideBar>
         <Items />
       </div>
     );
