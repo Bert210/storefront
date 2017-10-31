@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 
+import * as glamor from 'glamor'
 import glamorous from 'glamorous'
 
+import Items from "./Components/Items/Items"
+
 const Info = glamorous.div({
+  display: 'flex',
   height: 20,
   padding: 5,
   backgroundColor: 'black',
+  color: 'white',
+  fontSize: 12,
+  justifyContent: 'center',
+  alignItems: 'center',
 })
 
 const TitleContainer = glamorous.div({
-  // height: 80,
-  width: '100%',
-  padding: '0 2rem',
+  padding: '0 4rem',
   display: 'flex',
   boxShadow: '0 4px 4px #eee',
 })
@@ -20,6 +26,11 @@ const Title = glamorous.span({
   fontSize: 36,
   padding: '0.5rem 0',
   flex: 1,
+})
+
+const MainPromo = glamorous.div({
+  height: 500,
+
 })
 
 const Links = glamorous.span({
@@ -34,15 +45,23 @@ const Links = glamorous.span({
 const Link = glamorous.span({
   // height: '100%',
   // flexDirection: 'row',
-  padding: '0 0.5rem',
+  margin: '0 0.5rem',
+  textTransform: 'uppercase',
   // alignItems: 'center',
 })
+
+const SideBar = glamorous.span({
+
+})
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Info />
+        <Info>
+          Free Shipping on orders over $150
+        </Info>
         <TitleContainer>
           <Title>Store</Title>
           <Links>
@@ -50,9 +69,14 @@ class App extends Component {
             <Link>Departments</Link>
             <Link>Journal</Link>
             <Link>Contact</Link>
-            <Link>CART</Link>
+            <Link>Cart</Link>
           </Links>
         </TitleContainer>
+        <MainPromo />
+        <SideBar>
+          Filter by:
+        </SideBar>
+        <Items />
       </div>
     );
   }
